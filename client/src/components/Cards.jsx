@@ -8,7 +8,7 @@ function Cards() {
 
   useEffect(()=>{
 
-    Axios.get("http://localhost:3005/urunler")
+    Axios.get(process.env.REACT_APP_SERVER_URL+"/urunler")
     .then((response)=>{
       seturunlerListesi(response.data);
     })

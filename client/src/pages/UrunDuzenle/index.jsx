@@ -25,7 +25,7 @@ function UrunDuzenle() {
 
   useEffect(()=>{
 
-    Axios.get("http://localhost:3005/urunler")
+    Axios.get(process.env.REACT_APP_SERVER_URL+"/urunler")
     .then((response)=>{
       seturunlerListesi(response.data);
     })
@@ -33,7 +33,7 @@ function UrunDuzenle() {
   },[])
 
   const guncelleUrun = (id) => {
-    Axios.put("http://localhost:3005/guncelle", { id: id, urunYeniAdi: urunYeniAdi, urunYeniAciklama:urunYeniAciklama,urunYeniResimLinki:urunYeniResimLinki });
+    Axios.put(process.env.REACT_APP_SERVER_URL+"/guncelle", { id: id, urunYeniAdi: urunYeniAdi, urunYeniAciklama:urunYeniAciklama,urunYeniResimLinki:urunYeniResimLinki });
   };
 
   const urunSil = (id) => {
@@ -49,7 +49,7 @@ function UrunDuzenle() {
       cancelButtonText:'İptal et'
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`http://localhost:3005/delete/${id}`);
+        Axios.delete(process.env.REACT_APP_SERVER_URL+`/delete/${id}`);
         Swal.fire(
           'Silindi!',
           'Ürün Başarıyla Silindi.',

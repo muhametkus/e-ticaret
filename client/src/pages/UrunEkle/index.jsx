@@ -14,7 +14,7 @@ function UrunEkle() {
 
 
   const urunEkle=()=>{
-    Axios.post("http://localhost:3005/urunEkle", {
+    Axios.post(process.env.REACT_APP_SERVER_URL+"/urunEkle", {
       urunAdi: urunAdi,
       aciklama: aciklama,
       resimLinki: resimLinki
