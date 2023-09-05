@@ -60,7 +60,8 @@ app.put('/guncelle', async (req, res) => {
   });
 
 
+const port= 3005 || process.env.PORT;
 
-app.listen(3005, ()=>{
-    console.log("Port: 3005 Server çalışıyor");
+app.listen(port, ()=>{
+    console.log(`Port: ${port} Server çalışıyor`);
 })
