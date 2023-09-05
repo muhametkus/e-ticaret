@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -9,9 +10,9 @@ function Navbar() {
 
           <div className='f'>
             <ul className='flex gap-x-4'>
-              <li><a href="/">Anasayfa</a></li>
-              <li><a href="/urunekle">Ürün Ekle</a></li>
-              <li><a href="/urunduzenle">Ürün Düzenle</a></li>
+              <li><Link to="/">Anasayfa</Link></li>
+              <li><Link to="/urunekle">Ürün Ekle</Link></li>
+              <li><Link to="/urunduzenle">Ürün Düzenle</Link></li>
             </ul>
           </div>
 
