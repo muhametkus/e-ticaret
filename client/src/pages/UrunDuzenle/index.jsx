@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Axios from 'axios';
 import '../../App.css'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -20,7 +21,7 @@ function UrunDuzenle() {
   const [urunYeniAdi, setUrunYeniAdi]=useState('');
   const [urunYeniAciklama, setUrunYeniAciklama]=useState('');
   const [urunYeniResimLinki, setUrunYeniResimLinki]=useState('');
-
+  const navigate=useNavigate();
   
 
   useEffect(()=>{
@@ -56,10 +57,11 @@ function UrunDuzenle() {
           'success',
 
         )
+        navigate('/');
       }
     })
 
-
+    
 
     
   };

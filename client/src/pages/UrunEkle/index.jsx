@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import { Button, TextField } from '@mui/material'
 import Axios from 'axios'; 
-
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 
 function UrunEkle() {
@@ -11,6 +12,7 @@ function UrunEkle() {
   const [urunAdi, setUrunAdi] = useState('');
   const [aciklama, setAciklama] = useState('');
   const [resimLinki, setResimLinki] = useState('');
+  const navigate=useNavigate();
 
 
   const urunEkle=()=>{
@@ -20,7 +22,14 @@ function UrunEkle() {
       resimLinki: resimLinki
     })
     .then((response)=>{
-      alert("ürün eklendi.")
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Ürün Başarıyla Eklendi!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      navigate('/');
     })
 
   }
